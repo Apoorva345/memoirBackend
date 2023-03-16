@@ -51,5 +51,6 @@ mongoose.connect(process.env.MONGO_URL,{
   });
   
 app.listen(PORT , (req,res)=>{
+     console.log(PORT);
     console.log("Backend is running on port 5000");
 })
