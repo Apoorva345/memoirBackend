@@ -11,6 +11,8 @@ import messageRoute from './routes/MessageRoute.js'
 import multer from "multer";
 import path from 'path'
 import {fileURLToPath} from 'url';
+import cors from 'cors'
+
 const PORT = process.env.PORT || 5000;
 
 const __filename = fileURLToPath(import.meta.url);
@@ -20,6 +22,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 app.use('/api/auth',authRoute);
 app.use('/api/users',userRoute);
 app.use('/api/posts', postRoute);
